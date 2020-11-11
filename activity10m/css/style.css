@@ -119,3 +119,22 @@ input {
   width: 100%;
   margin-bottom: 10px;
 }
+
+.head {
+  text-align: center;
+}
+
+.create {
+  text-align: center;
+}
+
+.create-acc {
+  cursor: pointer;
+  color: #0275d8;
+  transition: 0.5s all ease;
+}
+
+.create-acc:hover {
+  text-decoration: underline;
+  color: #5bc0de;
+}

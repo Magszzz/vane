@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/create.js" async></script>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Account Creation</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="head">
+        <h1>Create an Account</h1>
+      </div>
+      <form id="create" action="">
+        <div class="input">
+          <label for="username">Username</label><br />
+          <input
+            type="text"
+            placeholder="Enter username"
+            id="username"
+            required
+          />
+        </div>
+        <div class="input">
+          <label for="password">Password</label><br />
+          <input
+            type="password"
+            placeholder="Enter password"
+            id="password"
+            required
+          />
+        </div>
+        <div class="input">
+          <label for="answer">Secret Answer</label><br />
+          <input
+            type="text"
+            placeholder="Enter secret answer"
+            id="answer"
+            required
+          />
+        </div>
+        <button class="btn-primary large" type="submit">Create</button>
+      </form>
+      <button class="btn-primary large" id="secret">
+        Enter Secret Question
+      </button>
+      <br />
+      <button class="btn-danger large" id="reset">Reset</button>
+    </div>
+
+    <script>
+      let username = document.querySelector("#username");
+      let password = document.querySelector("#password");
+      let answer = document.querySelector("#answer");
+      let secret = document.querySelector("#secret");
+      let create = document.querySelector("#create");
+      let reset = document.querySelector("#reset");
+
+      secret.addEventListener("click", () => {
+        prompt("Enter Secret Question");
+      });
+
+      reset.addEventListener("click", resetForm);
+
+      create.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        alert("You have successfully created an account.");
+
+        resetForm();
+      });
+
+      function resetForm() {
+        username.value = "";
+        password.value = "";
+        answer.value = "";
+      }
+    </script>
+  </body>
+</html>
