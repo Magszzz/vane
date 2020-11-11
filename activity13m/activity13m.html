@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Net Salary Computation</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1>Net Salary Computation</h1>
+      </div>
+      <label for="gross">Gross Salary</label>
+      <div class="input">
+        <input type="number" value="0" class="input-primary" id="gross" />
+      </div>
+      <label for="tax">Taxes</label>
+      <div class="input">
+        <input type="number" value="0" class="input-primary" id="tax" />
+      </div>
+      <label for="others">Other Deduction</label>
+      <div class="input">
+        <input type="number" value="0" class="input-primary" id="others" />
+      </div>
+      <button class="btn-primary" id="compute">Compute</button><br />
+      <button class="btn-danger" id="reset">Reset</button>
+    </div>
+
+    <script>
+      let gross = document.querySelector("#gross");
+      let tax = document.querySelector("#tax");
+      let others = document.querySelector("#others");
+      const compute = document.querySelector("#compute");
+      const reset = document.querySelector("#reset");
+
+      reset.addEventListener("click", () => {
+        gross.value = 0;
+        tax.value = 0;
+        others.value = 0;
+      });
+
+      compute.addEventListener("click", () => {
+        let netSalary = gross.value - tax.value - others.value;
+        alert(netSalary);
+        gross.value = 0;
+        tax.value = 0;
+        others.value = 0;
+      });
+    </script>
+  </body>
+</html>
